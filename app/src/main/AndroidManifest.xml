@@ -4,6 +4,7 @@
 
     <application
         android:allowBackup="true"
+        android:name=".di.VPDApplication"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +16,11 @@
         <activity
             android:name=".presentation.main_app.main_activity.MainActivity"
             android:exported="true"
+            android:label="@string/app_name"/>
+
+        <activity
+            android:name=".presentation.auth.host_activity.AuthHostActivity"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

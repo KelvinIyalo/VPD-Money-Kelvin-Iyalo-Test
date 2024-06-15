@@ -5,6 +5,8 @@
     <string name="title_account">Account</string>
     <string name="title_registration">Registration</string>
     <string name="title_signin">Sign In</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="footer_msg">If you have any questions or would like more information, please call our 24-hour Contact Centre on 0700CallVPD 0700 200000sas +234 1-2712005-7sss +234 1-2802500 or send an email to contactcenter@vpd.com. Thank you choosing VPD Money.\n \n Banking with VPM Money: Branch | ATM | Online | Mobile Contact centre</string>
+    <string name="purchase_of_goods">Purchase of Goods</string>
+
 </resources>

@@ -14,11 +14,33 @@
         android:id="@+id/navigation_home"
         android:name="com.vpdmoney.vpdmoneypay_kelviniyalo.presentation.main_app.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_fundTransferFragment"
+            app:destination="@id/fundTransferFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_transactions"
         android:name="com.vpdmoney.vpdmoneypay_kelviniyalo.presentation.main_app.transaction_history.TransactionHistoryFragment"
         android:label="fragment_transaction_history"
         tools:layout="@layout/fragment_transaction_history" />
+    <fragment
+        android:id="@+id/fundTransferFragment"
+        android:name="com.vpdmoney.vpdmoneypay_kelviniyalo.presentation.main_app.transfer.FundTransferFragment"
+        android:label="fragment_fund_transfer"
+        tools:layout="@layout/fragment_fund_transfer" >
+        <action
+            android:id="@+id/action_fundTransferFragment_to_transactionDetailsFragment"
+            app:destination="@id/transactionDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionDetailsFragment"
+        android:name="com.vpdmoney.vpdmoneypay_kelviniyalo.presentation.main_app.transaction_details.TransactionDetailsFragment"
+        android:label="fragment_transaction_details"
+        tools:layout="@layout/fragment_transaction_details" >
+        <argument
+            android:name="transferDetails"
+            app:argType="com.vpdmoney.vpdmoneypay_kelviniyalo.data.model.TransferDetails" />
+    </fragment>
 
 </navigation>

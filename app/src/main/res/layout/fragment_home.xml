@@ -4,19 +4,261 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     tools:context=".presentation.main_app.home.HomeFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:background="@drawable/background_gradient"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/greeting_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mailsansroman_demibold"
+            android:text="Welcome,"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/mailsansroman_demibold"
+            android:text="Kelvin"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/greeting_message"
+            app:layout_constraintStart_toEndOf="@+id/greeting_message"
+            app:layout_constraintTop_toTopOf="@+id/greeting_message" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_notifications_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/user_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/greeting_message"
+            app:tint="@color/white" />
+
+
+        <TextView
+            android:id="@+id/favorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/mailsansroman_demibold"
+            android:text="MY ACCOUNTS"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/accounts_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layoutAnimation="@anim/layout_animation_right"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/favorites"
+            tools:itemCount="3"
+            tools:listitem="@layout/available_accounts" />
+
+
+        <TextView
+            android:id="@+id/show_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableBottom="@drawable/show_more_icon"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/mailsansroman_demibold"
+            android:text="Show all"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/header_view"
+            app:layout_constraintEnd_toEndOf="@id/header_view"
+            app:layout_constraintStart_toStartOf="@id/header_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/quick_transactions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/mailsansroman_demibold"
+        android:text="Quick Transaction"
+        android:textColor="@color/text_bg_end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_view" />
+
+    <ImageView
+        android:id="@+id/show_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:drawableTint="@color/text_bg_end"
+        android:src="@drawable/show_more_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/quick_transactions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quick_transactions" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layoutAnimation="@anim/layout_animation"
+        app:layout_constraintTop_toBottomOf="@id/quick_transactions">
+
+        <androidx.cardview.widget.CardView
+            android:transitionName="tool_bar_card"
+            android:id="@+id/transfer"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_funds"
+                    android:transitionName="Fund_Transfer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/transfer"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mailsansroman_demibold"
+                    android:text="Fund Transfer"
+                    android:textColor="@color/text_bg_start" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bet"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/bill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bill">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/bills"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mailsansroman_demibold"
+                    android:text="Pay Bill"
+                    android:textColor="@color/text_bg_start" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/airtime"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/airtime"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mailsansroman_demibold"
+                    android:text="Airtime/Data"
+                    android:textColor="@color/text_bg_start" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bill"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/airtime"
+            tools:layout_editor_absoluteY="483dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/store"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/mailsansroman_demibold"
+                    android:text="Stores"
+                    android:textColor="@color/text_bg_start" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
